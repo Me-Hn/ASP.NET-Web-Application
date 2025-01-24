@@ -1,0 +1,59 @@
+﻿body {
+}
+
+.demo{color: brown;
+  text-align:center ;
+}
+
+
+
+
+
+
+
+.input-span {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Styling the labels */
+.label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Styling the input fields */
+.input-span input[type="text"],
+.input-span input[type="email"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+    .input-span input[type="text"]:focus,
+    .input-span input[type="email"]:focus {
+        border-color: #007bff;
+    }
+
+/* Styling the submit button */
+.submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .submit:hover {
+        background-color: #0056b3;
+    }
