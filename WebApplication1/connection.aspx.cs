@@ -11,13 +11,13 @@ namespace WebApplication1
 {
     public partial class connection : System.Web.UI.Page
     {
-        string connstring = "Data Source=DESKTOP-FG19520;Initial Catalog=aptech;Integrated Security=True";
+        string connstring = "Data Source=DESKTOP-QOSO84J\\SQLEXPRESS01;Initial Catalog=office;Integrated Security=True";
 
         public void fetchData()
         {
             SqlConnection conn = new SqlConnection(connstring);
 
-            string _data = "select * from office"; 
+            string _data = "select * from student"; 
             SqlDataAdapter adapter = new SqlDataAdapter(_data,conn);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
@@ -34,6 +34,8 @@ namespace WebApplication1
             }
         }
 
+
+        //insert Data
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connstring);
@@ -41,7 +43,7 @@ namespace WebApplication1
             string val1 = TextBox1.Text;
             string val2 = TextBox2.Text;
 
-            string query = "insert into office (name , email) VALUES ('" + val1 + "', '" + val2 + "')";
+            string query = "insert into student (name , email) VALUES ('" + val1 + "', '" + val2 + "')";
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -62,6 +64,13 @@ namespace WebApplication1
 
 
         }
+        //insert Data End
+
+        //update Data
+        
+
+
+        //update Data End
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -72,7 +81,7 @@ namespace WebApplication1
             // Perform the delete operation
             SqlConnection conn = new SqlConnection(connstring);
 
-            string deleteQuery = "DELETE FROM office WHERE id = @id";
+            string deleteQuery = "DELETE FROM student WHERE id = @id";
                 SqlCommand cmd = new SqlCommand(deleteQuery, conn);
 
                 // Use parameters to prevent SQL injection
@@ -89,7 +98,14 @@ namespace WebApplication1
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
+            int id = Convert.ToInt32(GridView1.DataKeys[e.NewEditIndex].Value);
+            Response.Redirect($"Editpage.aspx?id={id}");
 
+            //Response.Redirect($"Edit.aspx?id={id}");
+
+            SqlConnection conn = new SqlConnection(connstring);
+
+            string update_data = "UPDATE Users SET name = @Name, email = @Email WHERE id = @Id;";
         }
 
         protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)

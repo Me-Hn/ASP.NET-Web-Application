@@ -122,6 +122,7 @@
     <Content Include="Content\StyleSheet1.css" />
     <Content Include="Default.aspx" />
     <Content Include="demo.aspx" />
+    <Content Include="Editpage.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="formDemo.aspx" />
     <Content Include="Global.asax" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="demo.aspx.designer.cs">
       <DependentUpon>demo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Editpage.aspx.cs">
+      <DependentUpon>Editpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editpage.aspx.designer.cs">
+      <DependentUpon>Editpage.aspx</DependentUpon>
     </Compile>
     <Compile Include="formDemo.aspx.cs">
       <DependentUpon>formDemo.aspx</DependentUpon>
